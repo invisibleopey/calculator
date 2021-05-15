@@ -1,0 +1,1 @@
+Calculator project. Part of the odin project curriculum
