@@ -26,7 +26,7 @@ function operate (operand1, operator, operand2) {
 }
 // Displaying Digits pressed
 
-const display = document.querySelector("#display span");
+const display = document.querySelector("#display");
 const digitBtns = document.querySelectorAll(".digits");
 
 let displayValue = display.textContent;

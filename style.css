@@ -5,7 +5,7 @@ body {
     margin: 0;
     padding: 0;
     background: #eee;
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: rgba(0, 0, 0, 0.7);
 }
 #calculatorBody {
@@ -13,35 +13,47 @@ body {
     height: 500px;
     margin: 3em auto;
     background: #666666;
-    border: 2px solid rgba(0, 0, 0, 0.7);
-    border-radius: 5px;
+    border: 2px solid rgba(0, 0, 0, 0.3);
+    border-radius: 10px;
     padding: 10px;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-around;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat(6, 1fr);
+    grid-gap: 5px;
 }
 #display {
-    flex: 0 0 90%;
+    grid-column: span 4;
     background: white;
     padding: 10px;
     margin-bottom: 10px;
-    position: relative;
-}
-#display span {
-    position: absolute;
-    right: 5px;
-    bottom: 0;
     font-size: 2em;
+    border-radius: 10px;
+    text-align: right;
+}
+button {
+    color: inherit;
+    font-family: inherit;
 }
 #clear, #delete {
-    flex: 0 0 40%;
-    background: tomato;
+    /* flex: 0 0 40%; */
+    grid-column: span 2;
+    background: rgba(255, 99, 71,0.9);
     margin-bottom: 5px;
     border: none;
     border-radius: 5px;
 }
+#clear:hover, #delete:hover {
+    cursor: pointer;
+    background: rgba(255, 99, 71,0.6);
+}
 .btn {
     margin-bottom: 5px;
     flex: 0 1 23%;
-    border-radius: 5px
+    border-radius: 5px;
+    border: none;
+    font-weight: 700;
+}
+.btn:hover {
+    cursor: pointer;
+    background: rgba(238, 238, 238,0.7);
 }
