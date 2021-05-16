@@ -9,7 +9,7 @@ body {
     color: rgba(0, 0, 0, 0.7);
 }
 #calculatorBody {
-    width: 400px;
+    max-width: 400px;
     height: 500px;
     margin: 3em auto;
     background: #666666;
