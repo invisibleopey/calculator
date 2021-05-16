@@ -68,6 +68,10 @@ function findResult () {
         display.textContent = displayValue;
         return;
     }
+    if (operator === "/" && displayValue === "0") {
+        clear();
+        return alert("You can not divide by zero!")
+    }
     operand2 = displayValue;
     displayValue = Math.round(operate(operand1,operator,operand2) * 100) / 100 
     display.textContent = displayValue;
@@ -83,3 +87,11 @@ function clear() {
     operand2 = "";
     operator = null;
 }
+
+const deleteBtn = document.querySelector("#delete");
+deleteBtn.addEventListener("click", deleteNumber);
+function deleteNumber() {
+    display.textContent = display.textContent.toString().slice(0, -1);
+    // Set the new displayValue to the new text in case want to use it for operation
+    displayValue = display.textContent;
+  }
