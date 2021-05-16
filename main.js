@@ -1,7 +1,6 @@
 let operand1 = "";
 let operand2 = "";
 let operator = null;
-let result = null;
 
 function add (a, b) {
     return Number(a) + Number(b);
@@ -55,7 +54,6 @@ function operationFunc (e) {
     }
         operand1 = displayValue;
         operator = e.srcElement.innerText;
-        screen.textContent = ""
 
     // }
     // num1 = displayValue;
@@ -66,9 +64,22 @@ const equalSign = document.querySelector("#equal");
 equalSign.addEventListener("click", findResult);
 
 function findResult () {
+    if (operator === null) {
+        display.textContent = displayValue;
+        return;
+    }
     operand2 = displayValue;
     displayValue = Math.round(operate(operand1,operator,operand2) * 100) / 100 
     display.textContent = displayValue;
     operator = null;
 }
 
+const clearBtn = document.querySelector("#clear");
+clearBtn.addEventListener("click", clear);
+function clear() {
+    displayValue = "0";
+    display.textContent = "0";
+    operand1 = "";
+    operand2 = "";
+    operator = null;
+}
