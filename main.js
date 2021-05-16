@@ -1,19 +1,19 @@
 let num1, operator, num2;
 
 function add (a, b) {
-    return a + b;
+    return Number(a) + Number(b);
 }
 
 function subtract (a, b) {
-    return a - b;
+    return Number(a) - Number(b);
 }
 
 function multiply(a, b) {
-    return a * b;
+    return Number(a) * Number(b);
 }
 
 function divide(a,b) {
-    return a / b;
+    return Number(a) / Number(b);
 }
 
 function operate (num1, operator, num2) {
@@ -36,3 +36,22 @@ function populateDisplay (e) {
 }
 
 // Making the calculator work 
+const operatorBtns = document.querySelectorAll(".operators");
+operatorBtns.forEach(button => button.addEventListener("click", operationFunc));
+
+function operationFunc (e) {
+    // console.log(e.srcElement.innerText);
+    num1 = displayValue;
+    operator = e.srcElement.innerText;
+    display.textContent = "";
+}
+
+const equalSign = document.querySelector("#equal");
+let result;
+equalSign.addEventListener("click", equalFunction);
+
+function equalFunction () {
+    num2 = displayValue;
+    result = operate(num1,operator,num2);
+    display.textContent = result;
+}
