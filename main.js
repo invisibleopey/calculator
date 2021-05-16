@@ -94,4 +94,12 @@ function deleteNumber() {
     display.textContent = display.textContent.toString().slice(0, -1);
     // Set the new displayValue to the new text in case want to use it for operation
     displayValue = display.textContent;
-  }
+}
+
+const decimalBtn = document.querySelector("#decimal");
+decimalBtn.addEventListener("click", insertDecimal);
+
+function insertDecimal (e) {
+    if (display.textContent.includes(".")) return
+    populateDisplay(e);
+}
