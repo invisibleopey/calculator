@@ -24,7 +24,7 @@ function operate (num1, operator, num2) {
 }
 // Displaying Digits pressed
 
-const display = document.querySelector("#display");
+const display = document.querySelector("#display span");
 let displayValue = "";
 const digitBtns = document.querySelectorAll(".digits");
 digitBtns.forEach(button => button.addEventListener("click", populateDisplay));

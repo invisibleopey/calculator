@@ -21,10 +21,17 @@ body {
     justify-content: space-around;
 }
 #display {
-    flex: 0 0 100%;
+    flex: 0 0 90%;
     background: white;
-    padding: 5px;
+    padding: 10px;
     margin-bottom: 10px;
+    position: relative;
+}
+#display span {
+    position: absolute;
+    right: 5px;
+    bottom: 0;
+    font-size: 2em;
 }
 #clear, #delete {
     flex: 0 0 40%;
